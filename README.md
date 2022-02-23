@@ -19,7 +19,7 @@ Follow the bellow steps to install it.
 
 #### For Arch based distros
 ```
-sudo pacman -Syu qt5-webchannel qt5-webengine python-pyqt5-webengine
+sudo pacman -S qt5-webchannel qt5-webengine python-pyqt5-webengine
 ```
 #### For Debian based distros
 ```
