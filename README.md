@@ -4,10 +4,10 @@ qtpy is a cross-platform GUI application that presents some interesting data and
 
 ## Installation
 
-```bash
+```
 pip install pywebview
 ```
-Will work for Windows and macOS but you might need some additional dependencies to run this app on linux.
+That's all you need to do for Windows and macOS. But you might need some additional dependencies to run this app on linux.
 
 ### Additional Dependencies for Linux
 
@@ -25,3 +25,11 @@ sudo pacman -S qt5-webchannel qt5-webengine python-pyqt5-webengine
 ```
 sudo apt install python3-pyqt5 python3-pyqt5.qtwebengine python3-pyqt5.qtwebchannel libqt5webkit5-dev
 ```
+## Running the app
+
+Go to directory root and run the `app.py` file to start the window.
+```
+python app.py
+```
+
+
