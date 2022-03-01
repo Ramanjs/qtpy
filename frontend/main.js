@@ -17,7 +17,11 @@ const WolframController = () => {
 };
 
 const Homepage = () => {
+
   const container = document.querySelector('.container');
+  const answer = document.createElement('p');
+  const form = document.createElement('form');
+
   const getSearchElement = () => {
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
@@ -36,7 +40,6 @@ const Homepage = () => {
   };
 
   const getFormElement = () => {
-    const form = document.createElement('form');
     const input = getSearchElement();
     const submit = getSubmitElement();
     form.appendChild(input);
@@ -47,15 +50,29 @@ const Homepage = () => {
   const populateWindow = () => {
     const form = getFormElement();
     container.appendChild(form);
+    container.appendChild(answer)
     return form;
+  };
+
+  const displayAnswer = (response) => {
+    answer.style.border = '2px solid black';
+    answer.innerText = response
   };
 
   return {
     populateWindow,
+    displayAnswer
   }
 };
+
+
 
 const homepage = Homepage();
 const wolframcontroller = WolframController();
 const form = homepage.populateWindow();
 wolframcontroller.activateForm(form);
+
+eel.expose(getInfoFromBackend)
+function getInfoFromBackend(response) {
+  homepage.displayAnswer(response);
+}
