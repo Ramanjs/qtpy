@@ -1,6 +1,6 @@
-qtpy is a cross-platform GUI application that presents some interesting data and answers creative questions by using a bunch of APIs. It uses `pywebview` to render the UI.
+qtpy is a cross-platform GUI application that presents some interesting data and answers creative questions by using a bunch of APIs. It uses [eel](https://github.com/ChrisKnott/Eel) to render the UI.
 
-`pywebview` is a lightweight cross-platform wrapper around a webview component that allows to display HTML content in its own native GUI window.
+[Eel](https://github.com/ChrisKnott/Eel) is a little Python library for making simple Electron-like offline HTML/JS GUI apps, with full access to Python capabilities and libraries.
 
 ## Installation
 
