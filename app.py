@@ -1,3 +1,8 @@
-import webview
-webview.create_window('Hello world', 'https://pywebview.flowrl.com/')
-webview.start()
+import eel
+
+eel.init('frontend')
+
+from backend import wolfram
+print("Hello")
+
+eel.start('index.html')
