@@ -3,13 +3,12 @@ const Homepage = () => {
   const container = document.querySelector('.container');
   const answer = document.createElement('p');
   const form = document.createElement('form');
-  const menu = document.createElement('div');
 
   const getSearchElement = () => {
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
-    input.setAttribute('id', 'search');
-    input.setAttribute('placeholder', 'Ask my a question...');
+    input.setAttribute('id', 'wolfram');
+    input.setAttribute('placeholder', 'Ask me a question...');
     input.setAttribute('autocomplete', 'off');
     input.setAttribute('required', '');
     return input;
@@ -19,6 +18,7 @@ const Homepage = () => {
     const submit = document.createElement('input');
     submit.setAttribute('type', 'submit');
     submit.setAttribute('value', 'Search');
+    submit.classList.add('button');
     return submit;
   };
 
@@ -30,10 +30,27 @@ const Homepage = () => {
     return form;
   };
 
+  const getMenuElement = () => {
+    const menu = document.createElement('div');
+    menu.innerText = 'Menu';
+    menu.classList.add('menu');
+    menu.classList.add('button');
+    return menu;
+  };
+
+  const getAnswerElement = () => {
+    const answer = document.createElement('div');
+    answer.innerText = 'Placeholder';
+    answer.classList.add('answer');
+    answer.classList.add('ansbefore');
+    return answer;
+  };
+
   const populateWindow = () => {
     clearScreen();
-    menu.innerText = 'Menu';
     const form = getFormElement();
+    const menu = getMenuElement();
+    const answer = getAnswerElement();
     container.appendChild(form);
     container.appendChild(answer);
     container.appendChild(menu);
@@ -44,8 +61,9 @@ const Homepage = () => {
   };
 
   const displayAnswer = (response) => {
-    answer.style.border = '2px solid black';
-    answer.innerText = response
+    const answer = document.querySelector('.answer');
+    answer.classList.remove('ansbefore');
+    answer.innerText = response;
   };
 
   return {
