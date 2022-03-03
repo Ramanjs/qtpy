@@ -3,6 +3,7 @@ const Homepage = () => {
   const container = document.querySelector('.container');
   const answer = document.createElement('p');
   const form = document.createElement('form');
+  const menu = document.createElement('div');
 
   const getSearchElement = () => {
     const input = document.createElement('input');
@@ -30,10 +31,16 @@ const Homepage = () => {
   };
 
   const populateWindow = () => {
+    clearScreen();
+    menu.innerText = 'Menu';
     const form = getFormElement();
     container.appendChild(form);
-    container.appendChild(answer)
-    return form;
+    container.appendChild(answer);
+    container.appendChild(menu);
+    return {
+      form,
+      menu
+    }
   };
 
   const displayAnswer = (response) => {
@@ -43,7 +50,7 @@ const Homepage = () => {
 
   return {
     populateWindow,
-    displayAnswer
+    displayAnswer,
   }
 };
 
