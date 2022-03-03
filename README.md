@@ -27,3 +27,13 @@ Options
 8. \Song lyrics API
 9. Travel APIs
 10. /Harry Potter
+
+MediaWiki Api
+Stoicism quotes https://github.com/tlcheah2/stoic-quote-lambda-public-api 
+Facts about numbers http://numbersapi.com/#random/trivia
+Open Notify
+Random dog photos https://random.dog/woof.json
+Excuses https://excuser.herokuapp.com/
+Tasty https://rapidapi.com/apidojo/api/tasty/
+Lyrics https://docs.ksoft.si/api/lyrics-api
+Programming quotes https://programming-quotes-api.herokuapp.com/Quotes/random
