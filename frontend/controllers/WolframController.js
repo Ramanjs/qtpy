@@ -1,13 +1,20 @@
 const WolframController = () => {
 
-  const activateForm = (form) => {
+  const activateForm = () => {
+    homepage.populateWindow();
+    const form = document.querySelector('form');
     form.addEventListener('submit', getFormData);
+    menuController.activateMenuBtn();
   };
 
   const getFormData = (e) => {
     e.preventDefault();
     const search = document.querySelector('#wolfram').value;
-    eel.printData(search)
+    const req = {
+      'api': 'wolfram',
+      'search': search
+    }
+    sendRequest(req);
   };
 
   return {

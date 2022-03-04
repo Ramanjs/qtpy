@@ -1,8 +1,4 @@
 const Menu = () => {
-  const container = document.querySelector('.container')
-  const wikipedia = document.createElement('div');
-  const lyrics = document.createElement('div');
-  const excuses = document.createElement('div');
 
   const getButton = (name) => {
     const button = document.createElement('div');
@@ -10,6 +6,13 @@ const Menu = () => {
     button.classList.add('api');
     button.classList.add('button');
     return button;
+  };
+
+  const getBackButton = () => {
+    const back = document.createElement('div');
+    back.classList.add('button');
+    back.classList.add('back');
+    return back;
   };
 
   const populateWindow = () => {
@@ -32,6 +35,8 @@ const Menu = () => {
     food.innerText = 'Search food recipes';
     const programming = getButton('programming');
     programming.innerText = 'Programming quotes';
+    const back = getBackButton();
+    back.innerText = 'Go Back';
     container.appendChild(wikipedia);
     container.appendChild(lyrics);
     container.appendChild(stoicism);
@@ -41,6 +46,7 @@ const Menu = () => {
     container.appendChild(dog);
     container.appendChild(food);
     container.appendChild(programming);
+    container.appendChild(back);
   }
 
   return {

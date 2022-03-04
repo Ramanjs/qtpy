@@ -1,7 +1,5 @@
 const Homepage = () => {
 
-  const container = document.querySelector('.container');
-
   const getSearchElement = () => {
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
@@ -53,10 +51,6 @@ const Homepage = () => {
     container.appendChild(form);
     container.appendChild(answer);
     container.appendChild(menu);
-    return {
-      form,
-      menu
-    }
   };
 
   const displayAnswer = (response) => {

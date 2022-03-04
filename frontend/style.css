@@ -91,3 +91,30 @@ input[type="submit"]:hover {
     text-align: left;
     margin: 10px 0;
 }
+
+/*quote syling*/
+
+.quote {
+    width: 50%;
+    font-size: 25px;
+    text-align: center;
+    margin: 10px 10px;
+    padding: 10px 10px;
+}
+
+.author {
+    width: 50%;
+    font-size: 25px;
+    text-align: right;
+    margin: 10px 10px;
+    padding: 10px 10px;
+
+}
+
+.back {
+   color: #d132d1; 
+}
+
+.back:hover {
+    background-color: #d132d1;
+}
