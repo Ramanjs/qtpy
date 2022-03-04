@@ -18,7 +18,6 @@ const WolframController = () => {
   };
 
   return {
-    getFormData,
     activateForm
   }
 };

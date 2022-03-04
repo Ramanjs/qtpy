@@ -3,12 +3,14 @@ const container = document.querySelector('.container');
 const homepage = Homepage();
 const quote = Quote();
 const menu = Menu();
+const dog = Dog();
 
 const wolframController = WolframController();
 const menuController = MenuController();
 const stoicismController = StoicismController();
 const programmingController = ProgrammingController();
 const numberController = NumberController();
+const dogController = DogController();
 
 eel.expose(getInfoFromBackend)
 function getInfoFromBackend(api, response) {
@@ -42,6 +44,8 @@ function getInfoFromBackend(api, response) {
       }
       quote.populateWindow(r);
       break;
+    case 'dog':
+      dog.populateWindow(response['url']);
   }
 }
 

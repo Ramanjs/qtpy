@@ -3,7 +3,6 @@ import requests
 
 eel.init("frontend")
 
-# from backend import wolfram
 print("Hello. Starting the app..")
 
 @eel.expose
@@ -19,6 +18,9 @@ def fetchData(req):
         eel.getInfoFromBackend(req["api"], response.text)
     elif (req["api"] == "programming"):
         response = requests.get("https://programming-quotes-api.herokuapp.com/Quotes/random")
+        eel.getInfoFromBackend(req["api"], response.json())
+    elif (req["api"] == "dog"):
+        response = requests.get("https://random.dog/woof.json")
         eel.getInfoFromBackend(req["api"], response.json())
 
 eel.start("index.html")

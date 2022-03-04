@@ -1,5 +1,5 @@
 const StoicismController = () => {
-  const sendStoicismRequest = (api) => {
+  const sendStoicismRequest = () => {
     const req = {
       'api': 'stoicism'
     }
@@ -7,14 +7,6 @@ const StoicismController = () => {
   };
 
   return {
-    sendStoicismRequest,
+    sendStoicismRequest
   }
 };
-
-//eel.expose(getStoicQuote);
-//function getStoicQuote(data) {
-  //console.log(data);
-  //quote.populateWindow(data);
-//}
-
-
