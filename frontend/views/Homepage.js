@@ -1,8 +1,6 @@
 const Homepage = () => {
 
   const container = document.querySelector('.container');
-  const answer = document.createElement('p');
-  const form = document.createElement('form');
 
   const getSearchElement = () => {
     const input = document.createElement('input');
@@ -23,6 +21,7 @@ const Homepage = () => {
   };
 
   const getFormElement = () => {
+    const form = document.createElement('form');
     const input = getSearchElement();
     const submit = getSubmitElement();
     form.appendChild(input);

@@ -81,3 +81,13 @@ input[type="submit"]:hover {
 .ansbefore {
     visibility: hidden;
 }
+
+/*menu styling*/
+
+.api {
+    width: 60%;
+    padding: 10px;
+    font-size: 25px;
+    text-align: left;
+    margin: 10px 0;
+}
