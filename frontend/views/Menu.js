@@ -19,14 +19,12 @@ const Menu = () => {
     clearScreen();
     const weather = getButton('weather');
     weather.innerText = 'Weather forecast';
-    const lyrics = getButton('lyrics');
-    lyrics.innerText = 'Search for song lyrics';
     const stoicism = getButton('stoicism');
     stoicism.innerText = 'Stoicism quotes';
     const numbers = getButton('numbers');
-    numbers.innerText = 'Facts about numbers';
+    numbers.innerText = 'Number trivia';
     const iss = getButton('iss');
-    iss.innerText = 'Current location of the International Space Station';
+    iss.innerText = 'Live location of the International Space Station';
     const excuses = getButton('excuses');
     excuses.innerText = 'Get random excuses for situations';
     const dog = getButton('dog');
@@ -38,7 +36,6 @@ const Menu = () => {
     const back = getBackButton();
     back.innerText = 'Go Back';
     container.appendChild(weather);
-    container.appendChild(lyrics);
     container.appendChild(stoicism);
     container.appendChild(numbers);
     container.appendChild(iss);

@@ -102,5 +102,26 @@ def fetchData(req):
             "lon": response["iss_position"]["longitude"]
         }
         eel.getInfoFromBackend(req["api"], r)
+    elif (req["api"] == "food"):
+        recipe = req["recipe"]
+        apiKey = "453f781095384b309ed25aeff13935ed"
+        response = requests.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=" + apiKey + "&query=" + recipe + "&number=1")
+        response = response.json()
+        recipeId = str(response["results"][0]["id"])
+        response = requests.get("https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=" + apiKey)
+        response = response.json()
+        r = {
+            "title": response["title"],
+            "url": response["image"],
+            "instructions": response["instructions"],
+            "summary": response["summary"]
+        }
+        ingredientList = response["extendedIngredients"]
+        ingredients = [] 
+        index = 0
+        for x in ingredientList:
+            ingredients.append(x["original"])
+        r["ingredients"] = ingredients
+        eel.getInfoFromBackend(req["api"], r)
 
 eel.start("index.html")

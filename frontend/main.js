@@ -7,6 +7,7 @@ const dog = Dog();
 const excuse = Excuse();
 const weather = Weather();
 const iss = Iss();
+const recipe = Recipe();
 
 const wolframController = WolframController();
 const menuController = MenuController();
@@ -17,6 +18,7 @@ const dogController = DogController();
 const excuseController = ExcuseController();
 const weatherController = WeatherController();
 const issController = IssController();
+const recipeController = RecipeController();
 
 const clearScreen = () => {
   while (container.firstChild) { 
@@ -37,8 +39,6 @@ function getInfoFromBackend(api, response) {
       break;
     case 'weather':
       weather.displayWeather(response);
-      break;
-    case 'lyrics':
       break;
     case 'stoicism':
       r = {
@@ -68,8 +68,10 @@ function getInfoFromBackend(api, response) {
       excuse.displayAnswer(response);
       break;
     case 'iss':
-      //iss.displayMap(response);
       issController.receiveResponse(response);
+      break;
+    case 'food':
+      recipe.displayRecipe(response);
       break;
   }
 }
