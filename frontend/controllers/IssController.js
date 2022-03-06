@@ -1,6 +1,9 @@
 const IssController = () => {
-  const init = () => {
+  let isFirstRequest = true;
 
+  const init = () => {
+    sendIssRequest();
+    setInterval(sendIssRequest, 5000);
   };
 
   const sendIssRequest = () => {
@@ -10,7 +13,18 @@ const IssController = () => {
     sendRequest(req);
   };
 
+  const receiveResponse = (response) => {
+    if (isFirstRequest) {
+      isFirstRequest = false;
+      iss.populateWindow(response);
+      iss.updateMap(response);
+    } else {
+      iss.updateMap(response);
+    }
+  };
+
   return {
-    sendIssRequest
+    init,
+    receiveResponse
   }
 };

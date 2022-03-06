@@ -41,14 +41,58 @@ def fetchData(req):
         lon = str(location[0]["lon"])
         response = requests.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + appid)
         response = response.json()
+        iconSrc = {
+            "01d": "svg/day-sunny.svg",
+            "01n": "svg/night-clear.svg",
+            "02d": "svg/day-cloudy.svg",
+            "02n": "svg/night-cloudy.svg",
+            "03d": "svg/scattered-cloudy.svg",
+            "03n": "svg/scattered-cloudy.svg",
+            "04d": "svg/broken-cloudy.svg",
+            "04n": "svg/broken-cloudy.svg",
+            "09d": "svg/showers.svg",
+            "09n": "svg/showers.svg",
+            "10d": "svg/day-showers.svg",
+            "10n": "svg/night-showers.svg",
+            "11d": "svg/thunderstorm.svg",
+            "11n": "svg/thunderstorm.svg",
+            "13d": "svg/snowflake.svg",
+            "13n": "svg/snowflake.svg",
+            "50d": "svg/mist.svg",
+            "50n": "svg/mist.svg",
+        }
+        iconCode = response["current"]["weather"][0]["icon"]
+        iconCode = iconSrc[iconCode]
         r = {
             "description": response["current"]["weather"][0]["description"],
             "humidity": response["current"]["humidity"],
             "windspeed": round(response["current"]["wind_speed"]*18/5, 2),
             "temp": round(response["current"]["temp"] - 273.15),
-            "url": "http://openweathermap.org/img/wn/" + response["current"]["weather"][0]["icon"] + "@2x.png"
-
+            "url": iconCode,
         }
+        daily = {}
+        for i in range(7):
+            daily[str(i)] = {}
+        # print(daily)
+        dailyList = response["daily"]
+        # print(dailyList)
+        index = 0
+        for x in dailyList:
+            if (index >= 7):
+                break
+
+            maxTemp = response["daily"][index]["temp"]["max"]
+            maxTemp = round(maxTemp - 273.15)
+            daily[str(index)]["max"] = maxTemp
+            minTemp = response["daily"][index]["temp"]["min"]
+            minTemp = round(minTemp - 273.15)
+            daily[str(index)]["min"] = minTemp
+            iconCode = response["daily"][index]["weather"][0]["icon"]
+            iconCode = iconSrc[iconCode]
+            daily[str(index)]["url"] = iconCode
+            index += 1
+
+        r["daily"] = daily
         eel.getInfoFromBackend(req["api"], r)
     elif (req["api"] == "iss"):
         response = requests.get("http://api.open-notify.org/iss-now.json")

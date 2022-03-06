@@ -5,7 +5,7 @@ const MenuController = () => {
     document.querySelector('.lyrics').addEventListener('click', sendRequest);
     document.querySelector('.stoicism').addEventListener('click', stoicismController.sendStoicismRequest);
     document.querySelector('.numbers').addEventListener('click', numberController.sendNumberRequest);
-    document.querySelector('.iss').addEventListener('click', issController.sendIssRequest);
+    document.querySelector('.iss').addEventListener('click', issController.init);
     document.querySelector('.excuses').addEventListener('click', excuseController.init);
     document.querySelector('.dog').addEventListener('click', dogController.sendDogRequest);
     //document.querySelector('.food').addEventListener('click', listener);

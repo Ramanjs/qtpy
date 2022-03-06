@@ -68,7 +68,8 @@ function getInfoFromBackend(api, response) {
       excuse.displayAnswer(response);
       break;
     case 'iss':
-      iss.displayMap(response);
+      //iss.displayMap(response);
+      issController.receiveResponse(response);
       break;
   }
 }

@@ -142,6 +142,7 @@ select {
 }
 
 /*styling weather*/
+
 .main {
     color: #22b033;
     font-size: 25px;
@@ -155,6 +156,47 @@ select {
 
 .main div {
     margin: 10px 10px;
+}
+
+.weather-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.daily {
+    display: flex;
+    flex-direction: row;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    color: #22b033;
+    font-size: 25px;
+    margin: 0 30px;
+}
+
+.name {
+    margin-bottom: 15px;
+}
+
+.max {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.min {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.icon img{
+    width: 50px;
+    height: 50px;
+}
+
+.filter-green {
+    filter: invert(51%) sepia(85%) saturate(528%) hue-rotate(77deg) brightness(90%) contrast(86%);
 }
 
 /*map styling*/
