@@ -13,7 +13,7 @@ const Iss = function() {
     clearScreen();
     const mapElement = getMapElement();
     container.appendChild(mapElement);
-    this.map = L.map('map').setView([28.70, 77.10], 3);
+    this.map = L.map('map').setView([28.70, 77.10], 4);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmFtYW5qcyIsImEiOiJjbDBlOXpnZ2IwaDR4M2twbzdwMzZhbGF0In0.lXfegkVFWeAx_DWbDbFWyQ', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -35,7 +35,14 @@ const Iss = function() {
   const updateMap = (response) => {
     const lat = Number(response['lat']);
     const lon = Number(response['lon']);
-    this.marker.setLatLng([lat, lon]);
+    this.marker.setRadius(1000);
+    this.marker = L.circle([lat, lon], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 100000
+    }).addTo(this.map);
+
     this.map.panTo([lat, lon], animate=true);
   };
 
