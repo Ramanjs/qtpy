@@ -29,7 +29,7 @@ html, body {
     border-color: #0c0c04;
 }
 
-#wolfram {
+#search {
     background-color: #0c0c04;
     margin: 10px;
     padding: 5px;
@@ -72,8 +72,10 @@ input[type="submit"]:hover {
 }
 
 .answer {
+    width: 50%;
     color: #22b033;
     font-size: 25px;
+    text-align: center;
     margin: 10px;
     padding: 0;
 }
@@ -126,4 +128,38 @@ img {
     /*border-style: solid;*/
     /*border-width: 2px;*/
     /*border-color: #22b033;*/
+}
+
+/*excuse styling*/
+
+select {
+    background-color: #0c0c04;
+    color: #22b033;
+    border-width: 2px;
+    font-size: 25px;
+    margin: 10px;
+    padding: 5px;
+}
+
+/*styling weather*/
+.main {
+    color: #22b033;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-humidity, .weather-windspeed {
+    font-size: 15px;
+}
+
+.main div {
+    margin: 10px 10px;
+}
+
+/*map styling*/
+
+#map {
+    width: 600px;
+    height: 400px;
 }

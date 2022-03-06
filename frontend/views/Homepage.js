@@ -1,9 +1,8 @@
 const Homepage = () => {
-
   const getSearchElement = () => {
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
-    input.setAttribute('id', 'wolfram');
+    input.setAttribute('id', 'search');
     input.setAttribute('placeholder', 'Ask me a question...');
     input.setAttribute('autocomplete', 'off');
     input.setAttribute('required', '');

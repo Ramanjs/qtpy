@@ -1,5 +1,4 @@
 const Quote = () => {
-
   const getQuoteElement = () => {
     const p = document.createElement('div');
     p.classList.add('answer');

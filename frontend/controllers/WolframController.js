@@ -9,7 +9,7 @@ const WolframController = () => {
 
   const getFormData = (e) => {
     e.preventDefault();
-    const search = document.querySelector('#wolfram').value;
+    const search = document.querySelector('#search').value;
     const req = {
       'api': 'wolfram',
       'search': search

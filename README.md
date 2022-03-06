@@ -37,3 +37,8 @@ Excuses https://excuser.herokuapp.com/
 Tasty https://rapidapi.com/apidojo/api/tasty/
 Lyrics https://docs.ksoft.si/api/lyrics-api
 Programming quotes https://programming-quotes-api.herokuapp.com/Quotes/random
+spoonacular
+last.fm
+recipepuppy
+
+pk.eyJ1IjoicmFtYW5qcyIsImEiOiJjbDBlOXpnZ2IwaDR4M2twbzdwMzZhbGF0In0.lXfegkVFWeAx_DWbDbFWyQ

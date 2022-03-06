@@ -17,8 +17,8 @@ const Menu = () => {
 
   const populateWindow = () => {
     clearScreen();
-    const wikipedia = getButton('wikipedia');
-    wikipedia.innerText = 'Search Wikipedia';
+    const weather = getButton('weather');
+    weather.innerText = 'Weather forecast';
     const lyrics = getButton('lyrics');
     lyrics.innerText = 'Search for song lyrics';
     const stoicism = getButton('stoicism');
@@ -37,7 +37,7 @@ const Menu = () => {
     programming.innerText = 'Programming quotes';
     const back = getBackButton();
     back.innerText = 'Go Back';
-    container.appendChild(wikipedia);
+    container.appendChild(weather);
     container.appendChild(lyrics);
     container.appendChild(stoicism);
     container.appendChild(numbers);

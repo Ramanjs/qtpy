@@ -4,6 +4,9 @@ const homepage = Homepage();
 const quote = Quote();
 const menu = Menu();
 const dog = Dog();
+const excuse = Excuse();
+const weather = Weather();
+const iss = Iss();
 
 const wolframController = WolframController();
 const menuController = MenuController();
@@ -11,6 +14,19 @@ const stoicismController = StoicismController();
 const programmingController = ProgrammingController();
 const numberController = NumberController();
 const dogController = DogController();
+const excuseController = ExcuseController();
+const weatherController = WeatherController();
+const issController = IssController();
+
+const clearScreen = () => {
+  while (container.firstChild) { 
+    container.removeChild(container.lastChild);
+  }
+}
+
+const sendRequest = (req) => {
+  eel.fetchData(req);
+}
 
 eel.expose(getInfoFromBackend)
 function getInfoFromBackend(api, response) {
@@ -19,7 +35,8 @@ function getInfoFromBackend(api, response) {
     case 'wolfram':
       homepage.displayAnswer(response);
       break;
-    case 'wikipedia':
+    case 'weather':
+      weather.displayWeather(response);
       break;
     case 'lyrics':
       break;
@@ -46,16 +63,13 @@ function getInfoFromBackend(api, response) {
       break;
     case 'dog':
       dog.populateWindow(response['url']);
-  }
-}
-
-const sendRequest = (req) => {
-  eel.fetchData(req);
-}
-
-const clearScreen = () => {
-  while (container.firstChild) { 
-    container.removeChild(container.lastChild);
+      break;
+    case 'excuse':
+      excuse.displayAnswer(response);
+      break;
+    case 'iss':
+      iss.displayMap(response);
+      break;
   }
 }
 
