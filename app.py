@@ -25,7 +25,7 @@ import requests
 
 eel.init("frontend")
 
-print("App is up and running.")
+print("App is up and running. View in fullscreen mode for better experience.")
 
 apiKeys = {
     "wolframAlpha": "9JT46W-3EHPT2URJV",
