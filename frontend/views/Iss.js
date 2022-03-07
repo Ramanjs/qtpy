@@ -9,6 +9,22 @@ const Iss = function() {
     return mapElement;
   };
 
+  const getInfoElement = () => {
+    const heading = document.createElement('div');
+    heading.classList.add('iss-heading');
+    heading.innerText = 'Current location (updates every 5 seconds):';
+    const latitude = document.createElement('div');
+    latitude.classList.add('iss-latitude');
+    const longitude = document.createElement('div');
+    longitude.classList.add('iss-longitude');
+    const info = document.createElement('div');
+    info.classList.add('iss-info');
+    info.appendChild(heading);
+    info.appendChild(latitude);
+    info.appendChild(longitude);
+    return info;
+  };
+
   const getBackButton = () => {
     const back = document.createElement('div');
     back.classList.add('button');
@@ -19,6 +35,8 @@ const Iss = function() {
 
   const populateWindow = () => {
     clearScreen();
+    const infoElement = getInfoElement();
+    container.appendChild(infoElement);
     const mapElement = getMapElement();
     container.appendChild(mapElement);
     this.map = L.map('map').setView([28.70, 77.10], 4);
@@ -48,7 +66,9 @@ const Iss = function() {
   const updateMap = (response) => {
     const lat = Number(response['lat']);
     const lon = Number(response['lon']);
-    this.marker.setRadius(1000);
+    document.querySelector('.iss-latitude').innerText = 'Latitude: ' + lat;
+    document.querySelector('.iss-longitude').innerText = 'Longitude: ' + lon;
+    this.marker.setRadius(500);
     this.marker = L.circle([lat, lon], {
       color: 'red',
       fillColor: '#f03',

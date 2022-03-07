@@ -31,10 +31,14 @@ const Weather = () => {
     main.classList.add('main');
     const description = document.createElement('div');
     description.classList.add('weather-description');
-    const humidity = document.createElement('div');
-    humidity.classList.add('weather-humidity');
-    const windSpeed = document.createElement('div');
-    windSpeed.classList.add('weather-windspeed');
+    //const humidity = document.createElement('div');
+    //humidity.classList.add('weather-humidity');
+    //const windSpeed = document.createElement('div');
+    //windSpeed.classList.add('weather-windspeed');
+    const loc = document.createElement('div');
+    loc.classList.add('weather-loc');
+    const dateTime = document.createElement('div');
+    dateTime.classList.add('weather-date-time');
     const temp = document.createElement('div');
     temp.classList.add('weather-temp');
     const icon = document.createElement('div');
@@ -43,8 +47,10 @@ const Weather = () => {
     img.classList.add('filter-green');
     icon.appendChild(img);
     main.appendChild(description);
-    main.appendChild(humidity);
-    main.appendChild(windSpeed);
+    main.appendChild(loc);
+    main.appendChild(dateTime);
+    //main.appendChild(humidity);
+    //main.appendChild(windSpeed);
     main.appendChild(temp);
     main.appendChild(icon);
     return main;
@@ -107,10 +113,10 @@ const Weather = () => {
   const displayMainWeather = (response) => {
    const description = document.querySelector('.weather-description');
     description.innerText = response["description"];
-    const humidity = document.querySelector('.weather-humidity');
-    humidity.innerText = 'Humidity ' + response["humidity"] + '%';
-    const windSpeed = document.querySelector('.weather-windspeed');
-    windSpeed.innerText = 'Windspeed ' + response["windspeed"] + ' km/h';
+    //const humidity = document.querySelector('.weather-humidity');
+    //humidity.innerText = 'Humidity ' + response["humidity"] + '%';
+    //const windSpeed = document.querySelector('.weather-windspeed');
+    //windSpeed.innerText = 'Windspeed ' + response["windspeed"] + ' km/h';
     const temp = document.querySelector('.weather-temp');
     temp.innerHTML = response["temp"] + ' &deg;C';
     const img = document.querySelector('.weather-icon img');
@@ -130,8 +136,14 @@ const Weather = () => {
   
   const displayDailyWeather = (response) => {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    const d = new Date();
-    let today = d.getDay();
+    const date = new Date();
+    let today = date.getDay();
+    const day = days[today];
+    const time = date.toLocaleTimeString();
+    const loc = document.querySelector('.weather-loc');
+    loc.innerText = response["loc"];
+    const dateTime = document.querySelector('.weather-date-time');
+    dateTime.innerText = time + ', ' + day;
     today += 1;
     today %= 7;
     for (let i = 0; i <= 6; i++) {
@@ -150,6 +162,10 @@ const Weather = () => {
     container.appendChild(form);
     const main = getMainWindow();
     container.appendChild(main);
+    const heading = document.createElement('div');
+    heading.classList.add('daily-heading');
+    heading.innerText = '7 day forecast';
+    container.appendChild(heading);
     const daily = getDailyWindow();
     container.appendChild(daily);
     const back = getBackButton();

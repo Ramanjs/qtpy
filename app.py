@@ -69,6 +69,7 @@ def fetchData(req):
             "windspeed": round(response["current"]["wind_speed"]*18/5, 2),
             "temp": round(response["current"]["temp"] - 273.15),
             "url": iconCode,
+            "loc": req["city"]
         }
         daily = {}
         for i in range(7):
