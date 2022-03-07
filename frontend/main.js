@@ -76,7 +76,9 @@ function getInfoFromBackend(api, response) {
       dog.populateWindow(response['url']);
       break;
     case 'excuse':
+      excuse.populateWindow();
       excuse.displayAnswer(response);
+      excuseController.activateForm();
       break;
     case 'iss':
       issController.receiveResponse(response);

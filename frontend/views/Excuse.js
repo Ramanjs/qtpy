@@ -53,7 +53,6 @@ const Excuse = () => {
     answer.classList.add('answer');
     answer.classList.add('ansbefore');
     return answer;
-
   };
 
   const displayAnswer = (response) => {

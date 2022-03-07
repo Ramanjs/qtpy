@@ -1,7 +1,11 @@
 const ExcuseController = () => {
   const init = () => {
-    excuse.populateWindow();
-    activateForm();
+    initLoader();
+    const req = {
+      'api': 'excuse',
+      'category': 'family',
+    }
+    sendRequest(req);
   };
 
   const activateForm = () => {
@@ -21,7 +25,7 @@ const ExcuseController = () => {
   };
 
   return {
-    sendExcuseRequest,
-    init
+    init,
+    activateForm
   }
 };
