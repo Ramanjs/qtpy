@@ -1,9 +1,31 @@
+#!/usr/bin/env python3
+
+##################################################
+# Link to private github repo (will make public after submission): https://github.com/Ramanjs/qtpy
+
+# Authors:
+# Ramanjeet Singh (2021085) https://github.com/Ramanjs
+# Yash Yadav (2021117): https://github.com/YshYdv
+# Himani (2021053) https://github.com/inamih
+
+# Use app in fullscreen for better experience
+
+# Installation:
+# pip3 install requests eel
+
+# Running the app:
+# python3 app.py
+
+# Api keys
+# Please use your own keys if possible
+##################################################
+
 import eel
 import requests
 
 eel.init("frontend")
 
-print("Hello. Starting the app..")
+print("App is up and running.")
 
 @eel.expose
 def fetchData(req):
