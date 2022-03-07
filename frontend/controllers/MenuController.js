@@ -8,7 +8,7 @@ const MenuController = () => {
     document.querySelector('.excuses').addEventListener('click', excuseController.init);
     document.querySelector('.dog').addEventListener('click', dogController.init);
     document.querySelector('.food').addEventListener('click', recipeController.init);
-    document.querySelector('.programming').addEventListener('click', programmingController.sendProgrammingRequest);
+    document.querySelector('.programming').addEventListener('click', programmingController.init);
     document.querySelector('.back').addEventListener('click', wolframController.activateForm);
   };
 

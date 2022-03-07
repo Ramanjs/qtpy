@@ -1,4 +1,9 @@
 const ProgrammingController = () => {
+  const init = () => {
+    initLoader();
+    sendProgrammingRequest();
+  };
+
   const sendProgrammingRequest = () => {
     const req = {
       'api': 'programming'
@@ -7,6 +12,6 @@ const ProgrammingController = () => {
   };
 
   return {
-    sendProgrammingRequest,
+    init
   }
 };

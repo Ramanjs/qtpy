@@ -132,15 +132,6 @@ input[type="submit"]:hover {
 
 }
 
-img {
-    width: 25%;
-    height: 25%;
-    object-fit: cover;
-    /*border-style: solid;*/
-    /*border-width: 2px;*/
-    /*border-color: #22b033;*/
-}
-
 /*excuse styling*/
 
 select {
@@ -251,7 +242,7 @@ select {
     width: 40%;
 }
 
-.recipe-img {
+.recipe-img, img.dog {
     margin: 30px;
     width: 400px;
     height: 400px;

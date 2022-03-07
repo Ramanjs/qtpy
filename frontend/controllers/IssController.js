@@ -3,6 +3,7 @@ const IssController = () => {
   let interval = null;
 
   const init = () => {
+    initLoader();
     sendIssRequest();
     interval = setInterval(sendIssRequest, 5000);
   };

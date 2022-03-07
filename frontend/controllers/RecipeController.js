@@ -1,7 +1,11 @@
 const RecipeController = () => {
   const init = () => {
-    recipe.populateWindow();
-    activateForm();
+    initLoader();
+    const req = {
+      'api': 'food',
+      'recipe': 'chicken'
+    }
+    sendRequest(req);
   };
 
   const activateForm = () => {
@@ -20,6 +24,7 @@ const RecipeController = () => {
   };
 
   return {
-    init
+    init,
+    activateForm
   }
 };

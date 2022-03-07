@@ -1,7 +1,11 @@
 const WeatherController = () => {
   const init = () => {
-    weather.populateWindow();
-    activateForm();
+    initLoader();
+    const req = {
+      'api': 'weather',
+      'city': 'New York'
+    }
+    sendRequest(req);
   };
 
   const activateForm = () => {
@@ -20,7 +24,7 @@ const WeatherController = () => {
   };
 
   return {
-    sendWeatherRequest,
-    init
+    init,
+    activateForm
   }
 };

@@ -57,7 +57,9 @@ function getInfoFromBackend(api, response) {
       homepage.displayAnswer(response);
       break;
     case 'weather':
+      weather.populateWindow();
       weather.displayWeather(response);
+      weatherController.activateForm();
       break;
     case 'stoicism':
       r = {
@@ -92,7 +94,9 @@ function getInfoFromBackend(api, response) {
       issController.receiveResponse(response);
       break;
     case 'food':
+      recipe.populateWindow();
       recipe.displayRecipe(response);
+      recipeController.activateForm();
       break;
   }
 }
