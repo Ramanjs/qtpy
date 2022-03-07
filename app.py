@@ -125,4 +125,4 @@ def fetchData(req):
         r["ingredients"] = ingredients
         eel.getInfoFromBackend(req["api"], r)
 
-eel.start("index.html")
+eel.start('index.html')

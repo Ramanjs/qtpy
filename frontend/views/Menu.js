@@ -1,5 +1,4 @@
 const Menu = () => {
-
   const getButton = (name) => {
     const button = document.createElement('div');
     button.classList.add(name);
@@ -20,6 +19,10 @@ const Menu = () => {
     clearScreen();
     const weather = getButton('weather');
     weather.innerText = 'Weather forecast';
+    //const weatherSpan = document.createElement('span');
+    //weatherSpan.innerText = 'Weather forecast';
+    //weather.appendChild(weatherSpan);
+    //weather.appendChild(document.createElement('span').innerText = 'Weather forecast');
     const stoicism = getButton('stoicism');
     stoicism.innerText = 'Stoicism quotes';
     const numbers = getButton('numbers');

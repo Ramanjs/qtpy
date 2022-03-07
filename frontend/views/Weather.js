@@ -3,7 +3,7 @@ const Weather = () => {
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('id', 'search')
-    input.setAttribute('placeholder', 'Type location...');
+    input.setAttribute('placeholder', 'Type city name, ex: "Delhi"');
     input.setAttribute('autocomplete', 'off');
     input.setAttribute('required', '');
     return input;

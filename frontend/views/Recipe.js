@@ -3,7 +3,7 @@ const Recipe = () => {
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('id', 'search');
-    input.setAttribute('placeholder', 'Ask me a question...');
+    input.setAttribute('placeholder', 'Type recipe, ex: "Pasta"');
     input.setAttribute('autocomplete', 'off');
     input.setAttribute('required', '');
     return input;

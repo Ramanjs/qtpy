@@ -3,7 +3,7 @@ const RecipeController = () => {
     initLoader();
     const req = {
       'api': 'food',
-      'recipe': 'chicken'
+      'recipe': 'broccoli'
     }
     sendRequest(req);
   };
