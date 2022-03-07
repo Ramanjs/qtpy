@@ -26,6 +26,10 @@ const clearScreen = () => {
   }
 }
 
+const activateBackBtn = () => {
+  document.querySelector('.back').addEventListener('click', menuController.activateMenu);
+}
+
 const sendRequest = (req) => {
   eel.fetchData(req);
 }

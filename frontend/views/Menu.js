@@ -12,6 +12,7 @@ const Menu = () => {
     const back = document.createElement('div');
     back.classList.add('button');
     back.classList.add('back');
+    back.innerText = 'Go Back';
     return back;
   };
 
@@ -34,7 +35,6 @@ const Menu = () => {
     const programming = getButton('programming');
     programming.innerText = 'Programming quotes';
     const back = getBackButton();
-    back.innerText = 'Go Back';
     container.appendChild(weather);
     container.appendChild(stoicism);
     container.appendChild(numbers);

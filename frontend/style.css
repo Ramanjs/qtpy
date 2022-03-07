@@ -113,14 +113,6 @@ input[type="submit"]:hover {
 
 }
 
-.back {
-   color: #d132d1; 
-}
-
-.back:hover {
-    background-color: #d132d1;
-}
-
 img {
     width: 25%;
     height: 25%;
