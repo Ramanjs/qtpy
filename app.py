@@ -27,11 +27,17 @@ eel.init("frontend")
 
 print("App is up and running.")
 
+apiKeys = {
+    "wolframAlpha": "9JT46W-3EHPT2URJV",
+    "openWeatherMap": "f66f5c62953db3b0150351f894e35f60",
+    "spoonacular": "453f781095384b309ed25aeff13935ed"
+}
+
 @eel.expose
 def fetchData(req):
     if (req["api"] == "wolfram"):
-        appid = "9JT46W-3EHPT2URJV&i="
-        response = requests.get("http://api.wolframalpha.com/v1/result?appid=" + appid + req["search"])
+        appid = apiKeys["wolframAlpha"]
+        response = requests.get("http://api.wolframalpha.com/v1/result?appid=" + appid + "&i=" + req["search"])
         eel.getInfoFromBackend(req["api"], response.text)
     elif (req["api"] == "stoicism"):
         response = requests.get("https://api.themotivate365.com/stoic-quote")
@@ -55,7 +61,7 @@ def fetchData(req):
                 break
         eel.getInfoFromBackend(req["api"], response)
     elif (req["api"] == "weather"):
-        appid = "f66f5c62953db3b0150351f894e35f60"
+        appid = apiKeys["openWeatherMap"]
         city = str(req["city"])
         location = requests.get("http://api.openweathermap.org/geo/1.0/direct?q=" + city +  "&limit=1&appid=" + appid)
         location = location.json()
@@ -127,7 +133,7 @@ def fetchData(req):
         eel.getInfoFromBackend(req["api"], r)
     elif (req["api"] == "food"):
         recipe = req["recipe"]
-        apiKey = "453f781095384b309ed25aeff13935ed"
+        apiKey = apiKeys["spoonacular"]
         response = requests.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=" + apiKey + "&query=" + recipe + "&number=1")
         response = response.json()
         recipeId = str(response["results"][0]["id"])
