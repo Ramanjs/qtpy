@@ -1,4 +1,9 @@
 const StoicismController = () => {
+  const init = () => {
+    initLoader();
+    sendStoicismRequest();
+  };
+
   const sendStoicismRequest = () => {
     const req = {
       'api': 'stoicism'
@@ -7,6 +12,6 @@ const StoicismController = () => {
   };
 
   return {
-    sendStoicismRequest
+    init
   }
 };

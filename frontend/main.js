@@ -26,6 +26,13 @@ const clearScreen = () => {
   }
 }
 
+const initLoader = () => {
+  clearScreen();
+  const loader = document.createElement('div');
+  loader.classList.add('loader');
+  container.appendChild(loader);
+}
+
 const activateBackBtn = () => {
   document.querySelector('.back').addEventListener('click', menuController.activateMenu);
 }

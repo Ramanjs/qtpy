@@ -2,7 +2,7 @@ const MenuController = () => {
   const activateMenu = () => {
     menu.populateWindow();
     document.querySelector('.weather').addEventListener('click', weatherController.init)
-    document.querySelector('.stoicism').addEventListener('click', stoicismController.sendStoicismRequest);
+    document.querySelector('.stoicism').addEventListener('click', stoicismController.init);
     document.querySelector('.numbers').addEventListener('click', numberController.sendNumberRequest);
     document.querySelector('.iss').addEventListener('click', issController.init);
     document.querySelector('.excuses').addEventListener('click', excuseController.init);
