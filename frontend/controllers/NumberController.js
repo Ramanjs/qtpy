@@ -1,4 +1,9 @@
 const NumberController = () => {
+  const init = () => {
+    initLoader();
+    sendNumberRequest();
+  };
+
   const sendNumberRequest = () => {
     const req = {
       'api': 'numbers'
@@ -7,6 +12,6 @@ const NumberController = () => {
   };
 
   return {
-    sendNumberRequest,
+    init
   }
 };

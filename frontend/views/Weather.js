@@ -96,6 +96,14 @@ const Weather = () => {
     return daily;
   };
 
+  const getBackButton = () => {
+    const back = document.createElement('div');
+    back.classList.add('button');
+    back.classList.add('back');
+    back.innerText = 'Go Back';
+    return back;
+  };
+
   const displayMainWeather = (response) => {
    const description = document.querySelector('.weather-description');
     description.innerText = response["description"];
@@ -144,6 +152,9 @@ const Weather = () => {
     container.appendChild(main);
     const daily = getDailyWindow();
     container.appendChild(daily);
+    const back = getBackButton();
+    container.appendChild(back);
+    activateBackBtn();
   };
   
   return {

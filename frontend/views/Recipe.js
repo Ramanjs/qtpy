@@ -83,14 +83,25 @@ const Recipe = () => {
     recipe.appendChild(ingredients);
     recipe.appendChild(steps);
     return recipe;
-  }
+  };
+
+  const getBackButton = () => {
+    const back = document.createElement('div');
+    back.classList.add('button');
+    back.classList.add('back');
+    back.innerText = 'Go Back';
+    return back;
+  };
 
   const populateWindow = () => {
     clearScreen();
     const form = getFormElement();
     const recipe = getRecipeElement();
+    const back = getBackButton();
     container.appendChild(form);
     container.appendChild(recipe);
+    container.appendChild(back);
+    activateBackBtn();
   };
 
   const clearList = () => {
