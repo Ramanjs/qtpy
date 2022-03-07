@@ -9,6 +9,14 @@ const Iss = function() {
     return mapElement;
   };
 
+  const getBackButton = () => {
+    const back = document.createElement('div');
+    back.classList.add('button');
+    back.classList.add('back');
+    back.innerText = 'Go Back';
+    return back;
+  };
+
   const populateWindow = () => {
     clearScreen();
     const mapElement = getMapElement();
@@ -30,6 +38,11 @@ const Iss = function() {
       fillOpacity: 0.5,
       radius: 100000
     }).addTo(this.map);
+    
+    const back = getBackButton();
+    back.classList.add('iss');
+    container.appendChild(back);
+    activateBackBtn();
   };
 
   const updateMap = (response) => {

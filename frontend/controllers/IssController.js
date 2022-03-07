@@ -1,9 +1,10 @@
 const IssController = () => {
   let isFirstRequest = true;
+  let interval = null;
 
   const init = () => {
     sendIssRequest();
-    setInterval(sendIssRequest, 5000);
+    interval = setInterval(sendIssRequest, 5000);
   };
 
   const sendIssRequest = () => {
@@ -23,8 +24,14 @@ const IssController = () => {
     }
   };
 
+  const removeInterval = () => {
+    isFirstRequest = true;
+    clearInterval(interval);
+  };
+
   return {
     init,
-    receiveResponse
+    receiveResponse,
+    removeInterval
   }
 };

@@ -39,12 +39,23 @@ const Excuse = () => {
     return form;
   };
 
+  const getBackButton = () => {
+    const back = document.createElement('div');
+    back.classList.add('button');
+    back.classList.add('back');
+    back.innerText = 'Go Back';
+    return back;
+  };
+
   const populateWindow = () => {
     clearScreen();
     const form = getExcuseForm();
     const answer = getAnswerElement();
+    const back = getBackButton();
     container.appendChild(form);
     container.appendChild(answer);
+    container.appendChild(back);
+    activateBackBtn();
   };
 
   const getAnswerElement = () => {

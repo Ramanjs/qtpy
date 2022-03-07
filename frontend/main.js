@@ -34,7 +34,15 @@ const initLoader = () => {
 }
 
 const activateBackBtn = () => {
-  document.querySelector('.back').addEventListener('click', menuController.activateMenu);
+  const back = document.querySelector('.back');
+  if (back.classList.contains('iss')) {
+    back.addEventListener('click', () => {
+      issController.removeInterval();
+      menuController.activateMenu();
+    });
+  } else {
+    back.addEventListener('click', menuController.activateMenu)
+  }
 }
 
 const sendRequest = (req) => {
