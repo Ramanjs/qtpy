@@ -4,7 +4,12 @@ qtpy is a cross-platform GUI application that presents some interesting data and
 
 ## Installation
 
-Install with `pip`:
+First install the `requests` module using `pip`:
+```
+pip install requests
+```
+
+Then install `eel`:
 ```
 pip install eel
 ```
@@ -16,29 +21,13 @@ Go to directory root and run the `app.py` file to start the window.
 python app.py
 ```
 
-Options
-1. \Wolfram Alpha
-2. \Wikipedia API
-3. /Weather API
-4. Random dog photos
-5. Last.fm API
-6. Art API
-7. \Excuses
-8. \Song lyrics API
-9. Travel APIs
-10. /Harry Potter
-
-MediaWiki Api
-Stoicism quotes https://github.com/tlcheah2/stoic-quote-lambda-public-api 
-Facts about numbers http://numbersapi.com/#random/trivia
-Open Notify
-Random dog photos https://random.dog/woof.json
-Excuses https://excuser.herokuapp.com/
-Tasty https://rapidapi.com/apidojo/api/tasty/
-Lyrics https://docs.ksoft.si/api/lyrics-api
-Programming quotes https://programming-quotes-api.herokuapp.com/Quotes/random
-spoonacular
-last.fm
-recipepuppy
-
-pk.eyJ1IjoicmFtYW5qcyIsImEiOiJjbDBlOXpnZ2IwaDR4M2twbzdwMzZhbGF0In0.lXfegkVFWeAx_DWbDbFWyQ
+## APIs used in this project
+* [Wolfram Alpha](https://products.wolframalpha.com/api/)
+* [Open Weather Map](https://openweathermap.org/api)
+* [Random dog photos](https://random.dog/woof.json)
+* [Excuser](https://excuser.herokuapp.com/)
+* [Stoicism quotes](https://github.com/tlcheah2/stoic-quote-lambda-public-api)
+* [Facts about numbers](http://numbersapi.com/#random/trivia)
+* [Open Notify](http://open-notify.org/)
+* [Programming quotes](https://programming-quotes-api.herokuapp.com/)
+* [Spoonacular](https://spoonacular.com/food-api)
