@@ -6,19 +6,19 @@ qtpy is a cross-platform GUI application that presents some interesting data and
 
 First install the `requests` module using `pip`:
 ```
-pip install requests
+pip3 install requests
 ```
 
 Then install `eel`:
 ```
-pip install eel
+pip3 install eel
 ```
 
 ## Running the app
 
 Go to directory root and run the `app.py` file to start the window.
 ```
-python app.py
+python3 app.py
 ```
 
 ## APIs used in this project

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 ##################################################
-# Link to private github repo (will make public after submission): https://github.com/Ramanjs/qtpy
+# Link to github repo: https://github.com/Ramanjs/qtpy
 
 # Authors:
 # Ramanjeet Singh (2021085) https://github.com/Ramanjs
