@@ -1,3 +1,7 @@
+# qtpy
+
+![Demo gif](./demo.gif)
+
 qtpy is a cross-platform GUI application that presents some interesting data and answers creative questions by using a bunch of APIs. It uses [eel](https://github.com/ChrisKnott/Eel) to render the UI.
 
 [Eel](https://github.com/ChrisKnott/Eel) is a little Python library for making simple Electron-like offline HTML/JS GUI apps, with full access to Python capabilities and libraries.
